@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "GpJSON"
-  text: "Website for 15-418/15-618 Final Project"
-  tagline: My great project tagline
+  text: "High-Performance JSON Data Processing on GPUs"
+  tagline: Website for 15-418/15-618 Final Project
   actions:
     - theme: brand
       text: Markdown Examples
