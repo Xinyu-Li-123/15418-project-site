@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "GpJSON",
   description: "Website for 15-418/15-618 Final Project",
+  base: '/project-site/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
