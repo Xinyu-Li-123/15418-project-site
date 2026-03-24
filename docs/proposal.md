@@ -1,4 +1,4 @@
-# GPU Accelerated JSON Data Processing 
+# GPU Accelerated JSON Data Processing
 
 ## Proposal
 
@@ -8,7 +8,7 @@ Rui Zhang(ruiz3)
 
 ## URL
 
-[Project Proposal](http://localhost:5173/15418-project-site/proposal.html)
+[Project Proposal](http://xinyu-li-123.github.io/15418-project-site/proposal.html)
 
 ## Summary
 
@@ -22,7 +22,7 @@ While JSON parsing and querying are relatively costly using CPU, the high level 
 
 ## The Challenge
 
-The first challenge is processing JSON correctly. JSON is a text based, semi structured, and hierarchical format rather than a fixed width table. To process it correctly, we must not only scan the input text, but also identify record boundaries, detect structural characters such as braces, brackets, colons, and commas, distinguish characters inside quoted strings from true structural symbols, and keep track of nesting levels. These requirements introduce control dependencies and irregular access patterns that are much more complicated than those in regular numeric workloads. 
+The first challenge is processing JSON correctly. JSON is a text based, semi structured, and hierarchical format rather than a fixed width table. To process it correctly, we must not only scan the input text, but also identify record boundaries, detect structural characters such as braces, brackets, colons, and commas, distinguish characters inside quoted strings from true structural symbols, and keep track of nesting levels. These requirements introduce control dependencies and irregular access patterns that are much more complicated than those in regular numeric workloads.
 
 Another challenge is about the workload. The workload may exhibit divergent execution. Different JSON records can have different lengths, different nesting depths, and different string contents, so different GPU threads may follow different control paths during parsing or querying. For example, one record may contain the target key near the beginning, while another may require scanning much further or descending deeper into the structure. Query predicates can also create divergence, since some records may match early and others may fail late. This kind of branch divergence is exactly the sort of behavior that tends to reduce efficiency on GPUs since GPUs are designed for massive throughput on workloads with regular control flow and predictable memory access, whereas JSON processing is irregular in both structure and execution. The challenge is therefore not only to expose enough parallel work, but also to organize it in a way that reduces irregularity and divergence.
 
@@ -32,20 +32,20 @@ In terms of the data size. For very large JSON datasets, the entire input may no
 
 ## Resources
 
-we plan to build the system from scratch in C++ while taking inspiration from the design idea presented in this [VLDB paper](https://atlarge-research.com/pdfs/2025-vldb-gpjson.pdf). Our implementation will start directly from the input JSON text, with the goal of constructing structural indexes that capture the organization of the data. Based on these indexes, we will then implement a query executor that can perform basic query operations over the indexed JSON records. 
+we plan to build the system from scratch in C++ while taking inspiration from the design idea presented in this [VLDB paper](https://atlarge-research.com/pdfs/2025-vldb-gpjson.pdf). Our implementation will start directly from the input JSON text, with the goal of constructing structural indexes that capture the organization of the data. Based on these indexes, we will then implement a query executor that can perform basic query operations over the indexed JSON records.
 
 The development compute resources would be GHC machines with RTX 2080 GPU. And possibly we also would like to run experiments on our own computer with RTX 5090 GPU. This allows us to evaluate the design under both a more limited and a more powerful setting.
 
 ## Goals and Deliverables
 
-1. Build a simplified JSON processing prototype in C++ and CUDA for newline delimited JSON. Starting from raw input JSON text and constructing basic structural indexes over the data. 
+1. Build a simplified JSON processing prototype in C++ and CUDA for newline delimited JSON. Starting from raw input JSON text and constructing basic structural indexes over the data.
 2. Implement a query executor that uses the indexes to support a small set of representative queries.
 3. Evaluate the performance of the GPU based approach against the CPU baseline on datasets of different sizes and structures.
 4. **Extra**: Extend the query executor to support a richer subset of JSONPath style queries.
 
 ## Platform Choice
 
-We will choose Linux with NVIDIA GPUs with modern CUDA support as our platforms. The implementation will be written in C++ and CUDA. 
+We will choose Linux with NVIDIA GPUs with modern CUDA support as our platforms. The implementation will be written in C++ and CUDA.
 
 ## Schedule
 
@@ -56,8 +56,3 @@ We will choose Linux with NVIDIA GPUs with modern CUDA support as our platforms.
 |   week 3 (Apr 8 - Apr 14)   | Implement the query executor based on the constructed indexes and prepare the milestone report. |
 |  week 4 (Apr 15 - Apr 21)   | Conduct testing and performance evaluation of the full system. |
 | week 5 & 6 (Apr 22- Apr 30) |      Analyze the results and prepare the final report.       |
-
-
-
-
-
