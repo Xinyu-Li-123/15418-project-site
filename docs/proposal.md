@@ -32,9 +32,9 @@ In terms of the data size. For very large JSON datasets, the entire input may no
 
 ## Resources
 
-we plan to build the system from scratch in C++ while taking inspiration from the design idea presented in this [VLDB paper](https://atlarge-research.com/pdfs/2025-vldb-gpjson.pdf). Our implementation will start directly from the input JSON text, with the goal of constructing structural indexes that capture the organization of the data. Based on these indexes, we will then implement a query executor that can perform basic query operations over the indexed JSON records.
+we plan to build the system in C++/CUDA while taking inspiration from the design idea presented in this [VLDB paper](https://atlarge-research.com/pdfs/2025-vldb-gpjson.pdf). In addition to the paper, we will also study the authors’ [open-source GpJSON implementation in Java/CUDA](https://github.com/koesie10/gpjson) as a reference. Our implementation will start directly from the input JSON text, with the goal of constructing structural indexes that capture the organization of the data. Based on these indexes, we will then implement a query executor that can perform basic query operations over the indexed JSON records.
 
-The development compute resources would be GHC machines with RTX 2080 GPU. And possibly we also would like to run experiments on our own computer with RTX 5090 GPU. This allows us to evaluate the design under both a more limited and a more powerful setting.
+The development compute resources would be GHC machines with RTX 2080 GPU. And possibly we also would like to run experiments on our own computer with RTX 5090 GPU or AWS EC2 instances. This allows us to evaluate the design under both a more limited and a more powerful setting.
 
 ## Goals and Deliverables
 
