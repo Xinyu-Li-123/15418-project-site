@@ -10,5 +10,8 @@ hero:
     - theme: brand
       text: Project Proposal
       link: /proposal
+    - theme: brand
+      text: Milestone Report
+      link: /project-milestone-report
 ---
 
