@@ -4,34 +4,21 @@
 
 [Milestone Report](https://xinyu-li-123.github.io/15418-project-site/project-milestone-report.html)
 
-<https://xinyu-li-123.github.io/15418-project-site/>
-
 ## Schedule for the next two weeks
 
 For each half-week, we plan to do
 
-|            Half-Week             |                             Task                             |
+|            Half Week (3-4 days)             |                             Task                             |
 | :-------------------------: | :----------------------------------------------------------: |
-|   week 1 (Mar 25 -Mar 31)   | Identify a strong CPU based JSON processing baseline from existing state of the art implementations and begin developing our GPU based system. |
-
-- Apr 15 \- Apr 17  
-  - Integrate the four subsystems and run our impl on smaller dataset (1KB, 100KB, 100MB) on GHC machine \[Rui\]  
-  - Design and implement kernel optimization based on paper’s evaluation section and our understanding of codebase \[Xinyu\]  
-- Apr 18 \- Apr 21  
-  - Run original GpJSON on larger dataset (1GB, 2GB) on GHC / AWS and profile result with nsight to find bottlenecks  
-  - Adjust / redesign kernel optimization based on profiling results  
-- Apr 22 \- Apr 24  
-  - Adjust / redesign kernel optimization based on profiling results  
-  - Run baseline model against large dataset and collect results  
-- Apr 25 \- Apr 27  
-  - Report  
-  - Poster  
-  - If previous items are not finished in time, we will use these three days as extension  
-- Apr 28 \- Apr 30  
-  - Report  
-  - Poster
+| Apr 15 - Apr 17 | <ul><li>Integrate the four subsystems and run our impl on smaller dataset (1KB, 100KB, 100MB) on GHC machine [Rui]</li><li>Design and implement kernel optimization based on paper's evaluation section and our understanding of codebase [Xinyu]</li></ul> |
+| Apr 18 - Apr 21 | <ul><li>Run original GpJSON on larger dataset (1GB, 2GB) on GHC / AWS and profile result with nsight to find bottlenecks</li><li>Adjust / redesign kernel optimization based on profiling results</li></ul> |
+| Apr 22 - Apr 24 | <ul><li>Adjust / redesign kernel optimization based on profiling results</li><li>Run baseline model against large dataset and collect results</li></ul> |
+| Apr 25 - Apr 27 | <ul><li>Report</li><li>Poster</li></ul> |
+| Apr 28 - Apr 30 | <ul><li>Report</li><li>Poster</li></ul> |
 
 At the end of each half-week, we will have a meeting to decide work assignment for the next half-week.
+
+If items are not finished in time, we will use Apr 25 - Apr 27 as extension.
 
 ## What have we completed so far?
 
@@ -62,5 +49,5 @@ No.
 
 - Our GPU is not as powerful as the A100 cluster that the original paper used.  
 - GHC machines have storage limits, so we can’t test on larger dataset. This may be solvable, but we don’t know how. We may instead do large-scale tests on AWS.  
-- Some of our optimizations may not be working.  
+- Some of our optimizations may not work.
 - We may not be able to compare the original java implementation with our unoptimized cpp implementation of GpJSON, since that version depends on GrCUDA for async impl, while we decide not to support that.

@@ -1,0 +1,41 @@
+/* Widen the main content area */
+:root {
+  --vp-layout-max-width: 1440px;
+}
+
+.VPDoc .container {
+  max-width: var(--vp-layout-max-width) !important;
+}
+
+.VPDoc .content {
+  max-width: 100% !important;
+}
+
+/* Adjust content container width */
+.VPDoc .content-container {
+  max-width: 100% !important;
+}
+
+/* Left-align the content with padding */
+.vp-doc {
+  padding: 32px 64px !important;
+}
+
+/* Left-align tables */
+.vp-doc table {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Left-align table cell content */
+.vp-doc table td,
+.vp-doc table th {
+  text-align: left !important;
+}
+
+/* Optional: Adjust for smaller screens */
+@media (max-width: 960px) {
+  .vp-doc {
+    padding: 32px 24px !important;
+  }
+}

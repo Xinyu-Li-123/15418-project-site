@@ -9,17 +9,18 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Proposal', link: '/proposal' }
+      { text: 'Proposal', link: '/proposal' },
+      { text: 'Milestone', link: '/project-milestone-report' },
     ],
 
-    sidebar: [
-      {
-        text: 'Documents',
-        items: [
-          { text: 'Proposal', link: '/proposal' },
-        ]
-      }
-    ],
+    // sidebar: [
+    //   {
+    //     text: 'Documents',
+    //     items: [
+    //       { text: 'Proposal', link: '/proposal' },
+    //     ]
+    //   }
+    // ],
     //
     // socialLinks: [
     //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
