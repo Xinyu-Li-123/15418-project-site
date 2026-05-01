@@ -9,8 +9,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Proposal', link: '/proposal' },
-      { text: 'Milestone', link: '/project-milestone-report' },
+      { text: 'Report', link: '/15_418_Project_Report.pdf' },
+      { text: 'GitHub', link: 'https://github.com/Xinyu-Li-123/15418-project' },
     ],
 
     // sidebar: [
