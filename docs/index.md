@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Final Report
-      link: /15_418_Project_Report.pdf
+      link: /15418-project-site/15_418_Project_Report.pdf
     - theme: brand
       text: GitHub Repo
       link: https://github.com/Xinyu-Li-123/15418-project
